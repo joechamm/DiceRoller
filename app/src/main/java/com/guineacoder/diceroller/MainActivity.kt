@@ -11,12 +11,16 @@ import android.widget.Toast
  * This activity allows the user to roll a dice and view the result on screen.
  */
 class MainActivity : AppCompatActivity() {
+    lateinit var diceImage : ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val rollButton: Button = findViewById(R.id.button)
         rollButton.setOnClickListener { rollDice() }
+
+        diceImage = findViewById(R.id.dice_image)
     }
 
     /**
@@ -28,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         val diceRoll = dice.roll()
 
         // Update the screen with the dice roll
-        val diceImage: ImageView = findViewById(R.id.dice_image)
+        
         val drawableResource = when (diceRoll) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
