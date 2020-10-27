@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         val diceRoll = dice.roll()
 
         // Update the screen with the dice roll
-        
+
         val drawableResource = when (diceRoll) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
